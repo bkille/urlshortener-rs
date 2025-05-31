@@ -367,7 +367,7 @@ fn kutt_req(url: &str, api_key: &str, host: Option<&str>) -> req::Request {
     headers.insert("X-API-Key", api_key.parse().unwrap());
 
     req::Request {
-        url: format!("{}/api/url/submit", host.unwrap_or("https://kutt.it")),
+        url: format!("{}/api/v2/links", host.unwrap_or("https://kutt.it")),
         body: Some(format!(r#"{{"target": "{}"}}"#, url)),
         content_type: Some(req::ContentType::Json),
         user_agent: None,
