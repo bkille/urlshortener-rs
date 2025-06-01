@@ -361,7 +361,7 @@ request!(
     "https://is.gd/create.php?format=simple&url={}"
 );
 
-parse_json_tag!(kutt_parse, "shortUrl", "");
+parse_json_tag!(kutt_parse, "link", "");
 fn kutt_req(url: &str, api_key: &str, host: Option<&str>) -> req::Request {
     let mut headers = HeaderMap::new();
     headers.insert("X-API-Key", api_key.parse().unwrap());
